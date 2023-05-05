@@ -6,7 +6,6 @@ public class RelatorioFinanceiro {
     private ArrayList<Ganho> listaGanho;
     private ArrayList<Gasto> listaGasto;
 
-    private ArrayList<Gasto> pegarGasto;
 
 
     //construtor que ira iniciar as listas
@@ -24,19 +23,38 @@ public class RelatorioFinanceiro {
 
         listaGasto.add(gasto);
     }
-    public void relatorioGasto(Gasto gasto) {
-        //this.pegarGasto= new ArrayList<>();
-
-        for (Gasto gasto: listaGasto) {
-            if ()
+    public void relatorioGasto() {
+        double gastoTotal = 0;
+        for (Gasto gastoItem : listaGasto) {
+            gastoTotal += gastoItem.getValorGasto();
         }
+        System.out.println("O valor total de gastos é: " + gastoTotal);
     }
 
     public void relatorioGanho() {
+        double ganhoTotal = 0;
 
+        for (Ganho ganhoItem : listaGanho) {
+            ganhoTotal += ganhoItem.getValorGanho();
+        }
+        System.out.println("O valor total de ganhos é: " + ganhoTotal);
     }
 
-    public void relatorioMensal() {
+    public void relatorioMensal(int mes, int ano) {
+        double gastoTotal = 0;
+        double ganhoTotal = 0;
+        for (Gasto gastoItem : listaGasto) {
+            if (mes == gastoItem.getMes() && ano == gastoItem.getAno()) {
+                gastoTotal += gastoItem.getValorGasto();
+            }
+        }
+        for (Ganho ganhoItem : listaGanho) {
+            if (mes == ganhoItem.getMes() && ano == ganhoItem.getAno()) {
+                ganhoTotal += ganhoItem.getValorGanho();
+            }
+        }
+
+        System.out.println("O saldo mensal é de: " + (ganhoTotal - gastoTotal));
 
     }
 }

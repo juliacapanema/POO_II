@@ -28,15 +28,18 @@ public class Main {
                 System.out.println("1 - Insira os dados do ganho");
                 System.out.println("Tipo de ganho:");
                 String tipoGanho = scanner.next();
-                System.out.println("Data ganho:");
-                String dataGanho = scanner.next();
+                System.out.println("Mes:");
+                int mesGanho = scanner.nextInt();
+                System.out.println("Ano:");
+                int anoGanho = scanner.nextInt();
                 System.out.println("Valor Ganho:");
                 double valorGanho = scanner.nextDouble();
 
                 Ganho ganho = new Ganho();
 
                 ganho.setTipoGanho(tipoGanho);
-                ganho.setDataGanho(dataGanho);
+                ganho.setMes(mesGanho);
+                ganho.setAno(anoGanho);
                 ganho.setValorGanho(valorGanho);
 
                 newRelatorioFinanceiro.adicionaGanho(ganho);
@@ -45,8 +48,10 @@ public class Main {
                 System.out.println("2 - Insira os dados do ganho");
                 System.out.println("Tipo de gasto:");
                 String tipoGasto = scanner.next();
-                System.out.println("Data gasto:");
-                String dataGasto = scanner.next();
+                System.out.println("Mes:");
+                int mesGanho = scanner.nextInt();
+                System.out.println("Ano:");
+                int anoGanho = scanner.nextInt();
                 System.out.println("Valor gasto:");
                 double valorGasto = scanner.nextDouble();
                 System.out.println("Forma de pagamento:");
@@ -55,7 +60,8 @@ public class Main {
                 Gasto gasto = new Gasto();
 
                 gasto.setTipoGasto(tipoGasto);
-                gasto.setDataGasto(dataGasto);
+                gasto.setMes(mesGanho);
+                gasto.setAno(anoGanho);
                 gasto.setValorGasto(valorGasto);
                 gasto.setFormaPagamento(formaPagamento);
 
@@ -65,17 +71,23 @@ public class Main {
             if (opcao == 3) {
                 System.out.println("Relatorio de gastos:");
 
+                newRelatorioFinanceiro.relatorioGasto();
             }
 
             if (opcao == 4) {
                 System.out.println("Relatório de gastos");
+
+                newRelatorioFinanceiro.relatorioGanho();
             }
 
             if (opcao == 5) {
                 System.out.println("Relatorio Mensal");
-                System.out.println("Insira o mês desejado");
+                System.out.println("Mes:");
+                int mes = scanner.nextInt();
+                System.out.println("Ano:");
+                int ano = scanner.nextInt();
 
-
+                newRelatorioFinanceiro.relatorioMensal(mes, ano);
             }
 
             if (opcao == 6) {

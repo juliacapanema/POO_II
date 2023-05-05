@@ -2,7 +2,25 @@ public class Gasto {
 
     private String tipoGasto;
 
-    private String dataGasto;
+    private int mes;
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    private int ano;
 
     private double valorGasto;
 
@@ -14,14 +32,6 @@ public class Gasto {
 
     public void setTipoGasto(String tipoGasto) {
         this.tipoGasto = tipoGasto;
-    }
-
-    public String getDataGasto() {
-        return dataGasto;
-    }
-
-    public void setDataGasto(String dataGasto) {
-        this.dataGasto = dataGasto;
     }
 
     public double getValorGasto() {
