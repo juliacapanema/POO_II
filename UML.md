@@ -1,4 +1,5 @@
 -- UML da classe Ganho
+```bash
 ------------------
 |     Ganho      |
 ------------------
@@ -54,3 +55,4 @@
 | + relatorioGanho()     |
 | + relatorioMensal(int, int) |
 -----------------------------
+```
